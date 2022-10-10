@@ -2,8 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
-  binaryTargets = "linux-arm64-openssl-1.1.x"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native","linux-arm64-openssl-1.1.x"]
 }
 
 datasource db {
@@ -12,8 +12,10 @@ datasource db {
 }
 
 model BoughtItem {
-  id    Int     @default(autoincrement()) @id
-  name  String
-  price Int
-  category String
+  id         Int    @id @default(autoincrement())
+  name       String
+  price      Int
+  boughtDate DateTime @default(now())
+  insertDate DateTime @default(now())
+  updateDate DateTime @default(now()) @updatedAt
 }

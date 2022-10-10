@@ -8,5 +8,5 @@ export class CreateBoughtItemDto {
   price: number;
 
   @ApiProperty()
-  category: string;
+  boughtDate: Date;
 }

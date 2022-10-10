@@ -2,7 +2,6 @@
   <Header/>
     <div>
       {{houseHoldItems}}
-      ss
         <slot />
     </div>
   <Footer/>

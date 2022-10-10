@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1 class="text-3xl font-bold underline">WELCOME TO HOMEPAGE</h1>
-    <button class="btn">Button</button>
+    これは{{test}}です。
+    <boughtItemTables/>
   </div>
 </template>
+<script setup>
+const {data:test} = await useFetch('/api/bought-items');
+</script>
